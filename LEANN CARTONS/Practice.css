@@ -1,0 +1,200 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Main Container */
+.Main-Container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr; /* Navbar and content */
+    overflow: hidden;
+}
+
+/* Blurred Background Image */
+.Main-Container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./Images/BG-2.jpeg'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(2px); /* Applies the blur effect */
+    z-index: 0; /* Sits behind the content */
+}
+
+/* Content stays above the blurred background */
+.Main-Container > * {
+    position: relative;
+    z-index: 1; /* Places content above the background */
+}
+
+/* Navigation Bar */
+.Nav-Bar {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Logo and nav items */
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    padding: 0 0px;
+    gap: 10rem;
+    
+    z-index: 2; /* Sits above the background */
+    
+    
+    transition: background-color 0.5s ease-in-out;
+}
+
+.Logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+/* Navigation Items */
+.Nav-Items {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.Nav-Items a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(7, 6, 6);
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+}
+
+.Nav-Items a:hover {
+    color: #007BFF;
+}
+
+.Nav-Items .Active {
+    border-bottom: 2px solid #007BFF;
+}
+
+/* Main Header Section */
+/* .Main-Header {
+    display: grid;
+    justify-content: center;
+    align-items: center; 
+    text-align: center;
+    color: white;
+    z-index: 5;
+    padding: 20px;
+    min-height: calc(100vh - 70px);  Full height minus navbar
+}
+
+.Main-Header h1 {
+    font-size: 3rem;
+    margin: 0;
+    transition: transform 0.5s ease;
+    padding-top: 12rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.Main-Header p {
+    font-size: 1.5rem;
+    margin: 0;
+    transition: transform 0.5s ease;
+    padding-bottom: 13rem;
+    max-width: 1000px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+} */
+
+
+.Main-Header {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: stretch;
+  }
+  
+  .First-Header {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+  }
+  .First-Header h1
+  {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3rem;
+    color: black;
+    padding-left: 18rem;
+  }
+  
+  .First-Section {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    max-width: 350px;
+    background: linear-gradient(45deg, #919F91, #008EFF);
+    border-radius: 10px;
+    position: absolute;
+    top: 13rem;
+    left: 1rem;
+
+  }
+  
+  .Second-Section {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;
+    align-self: center;
+    order: 0;
+    max-width: 350px;
+    background: linear-gradient(45deg, #919F91, #008EFF);
+    border-radius: 10px;
+    position: absolute;
+    top: 13rem;
+  }
+  
+  .Third-Section {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: flex-end;
+    order: 0;
+    max-width: 330px;
+    background: linear-gradient(45deg, #919F91, #008EFF);
+    border-radius: 10px;
+    position: absolute;
+    top: 13rem;
+    right: 1rem;
+  }
+  .Heading
+  {
+    text-align: center;
+  }
+  .First-Text
+  {
+    text-align: center; /* Text alignment */
+    margin: 0 auto; /* Centers the paragraph block */
+    max-width: 600px; /* Optional: Limit paragraph width for better readability */
+    line-height: 1.6;
+  }
